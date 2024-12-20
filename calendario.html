@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificador Semanal</title>
+    <style>
+        /* Estilo general para la pagina */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Estilo del contenedor del calendario */
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        /* Estilo de cada dia en el calendario */
+        .day {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        /* Estilo del titulo de cada dia */
+        .day h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+        /* Estilo de los eventos dentro de los dias */
+        .event {
+            background-color: #007BFF;
+            color: white;
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        /* Efecto hover para los eventos */
+        .event:hover {
+            background-color: #0056b3;
+        }
+        /* Contenedor para agregar nuevos eventos */
+        .add-event {
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+        }
+        /* Campo de texto para ingresar nuevos eventos */
+        .add-event input {
+            flex: 1;
+            padding: 5px;
+            font-size: 14px;
+        }
+        /* Boton para agregar nuevos eventos */
+        .add-event button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Planificador Semanal</h1>
+    <div class="calendar" id="calendar">
+        <!-- Los dias se generaran dinamicamente con JavaScript -->
+    </div>
+
+    <script>
+        // Lista de los dias de la semana
+        const daysOfWeek = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
+
+        // Funcion para crear el calendario
+        function createCalendar() {
+            const calendar = document.getElementById('calendar'); // Obtiene el contenedor del calendario
+
+            // Itera sobre los dias de la semana
+            daysOfWeek.forEach(day => {
+                const dayDiv = document.createElement('div'); // Crea un contenedor para cada dia
+                dayDiv.className = 'day'; // Asigna la clase CSS
+
+                const dayTitle = document.createElement('h3'); // Crea el titulo del dia
+                dayTitle.textContent = day; // Asigna el nombre del dia
+                dayDiv.appendChild(dayTitle); // Agrega el titulo al contenedor del dia
+
+                const eventList = document.createElement('div'); // Crea un contenedor para la lista de eventos
+                eventList.className = 'event-list'; // Asigna la clase CSS
+                dayDiv.appendChild(eventList); // Agrega la lista de eventos al contenedor del dia
+
+                const addEventForm = document.createElement('div'); // Crea el formulario para agregar eventos
+                addEventForm.className = 'add-event'; // Asigna la clase CSS
+
+                const eventInput = document.createElement('input'); // Crea el campo de texto para nuevos eventos
+                eventInput.type = 'text';
+                eventInput.placeholder = 'Agregar evento'; // Texto de ayuda
+                addEventForm.appendChild(eventInput); // Agrega el campo de texto al formulario
+
+                const addButton = document.createElement('button'); // Crea el boton para agregar eventos
+                addButton.textContent = 'Agregar'; // Texto del boton
+                addEventForm.appendChild(addButton); // Agrega el boton al formulario
+
+                dayDiv.appendChild(addEventForm); // Agrega el formulario al contenedor del dia
+
+                // Evento para agregar un nuevo evento al hacer clic en el boton
+                addButton.addEventListener('click', () => {
+                    const eventText = eventInput.value.trim(); // Obtiene y limpia el texto ingresado
+                    if (eventText) {
+                        const eventDiv = document.createElement('div'); // Crea un nuevo elemento para el evento
+                        eventDiv.className = 'event'; // Asigna la clase CSS
+                        eventDiv.textContent = eventText; // Asigna el texto del evento
+
+                        // Evento para eliminar el evento al hacer clic
+                        eventDiv.addEventListener('click', () => {
+                            if (confirm('Eliminar este evento?')) { // Solicita confirmacion
+                                eventDiv.remove(); // Elimina el evento
+                            }
+                        });
+
+                        eventList.appendChild(eventDiv); // Agrega el nuevo evento a la lista
+                        eventInput.value = ''; // Limpia el campo de texto
+                    }
+                });
+
+                calendar.appendChild(dayDiv); // Agrega el contenedor del dia al calendario
+            });
+        }
+
+        // Espera a que el DOM se cargue completamente antes de ejecutar createCalendar
+        document.addEventListener('DOMContentLoaded', createCalendar);
+    </script>
+</body>
+</html>
