@@ -1,6 +1,7 @@
 import time
-import mediapipe as mp
-import cv2 as cv 
+import mediapipe as mp #pip install mediapipe
+import cv2 as cv #pip install opencv-pyhton
+
 
 # Configuracion de captura de video
 cap = cv.VideoCapture(0)
