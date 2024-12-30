@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Market Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Crypto Market Simulator</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Cryptocurrency</th>
+        <th>Price (USD)</th>
+      </tr>
+    </thead>
+    <tbody id="crypto-table-body">
+      <tr>
+        <td>Bitcoin</td>
+        <td id="bitcoin-price">Loading...</td>
+      </tr>
+      <tr>
+        <td>Ethereum</td>
+        <td id="ethereum-price">Loading...</td>
+      </tr>
+      <tr>
+        <td>Litecoin</td>
+        <td id="litecoin-price">Loading...</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    // Funcion para obtener precios de criptomonedas
+    async function fetchCryptoPrices() {
+      try {
+        // Hace una solicitud al endpoint del servidor
+        const response = await fetch('/api/crypto-prices');
+        const data = await response.json(); // Convierte la respuesta a JSON
+
+        // Actualiza los elementos HTML con los precios
+        document.getElementById('bitcoin-price').innerText = `$${data.bitcoin.usd}`;
+        document.getElementById('ethereum-price').innerText = `$${data.ethereum.usd}`;
+        document.getElementById('litecoin-price').innerText = `$${data.litecoin.usd}`;
+      } catch (error) {
+        console.error('Error fetching crypto prices:', error); // Muestra un error en la consola
+      }
+    }
+
+    // Llama a la funcion para obtener precios
+    fetchCryptoPrices();
+    // Actualiza los precios cada minuto
+    setInterval(fetchCryptoPrices, 60000);
+  </script>
+</body>
+</html>
