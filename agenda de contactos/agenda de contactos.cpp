@@ -4,7 +4,7 @@
 #include <string>    
 #include <sstream>   
 using namespace std;
-// Estructura para almacenar la informacion de un contacto
+// Estructura para almacenar la informacion de un contacto, solo usa 3 datos pero se puede hacer con cualquier numero de datos segun sea necesario
 struct Contacto {
     string nombre;
     string telefono;
