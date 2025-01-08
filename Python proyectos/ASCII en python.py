@@ -1,7 +1,7 @@
 
 from PIL import Image
 
-# Funcion para convertir la imagen a arte ASCII
+# Funcion para convertir la imagen a arte ASCII 
 def imagen_a_ascii(imagen_ruta, ancho=100):
     # Caracter que representa los niveles de intensidad de la imagen (de mas oscuro a mas claro)
     # Los caracteres mas oscuros representan los pixeles mas oscuros, y los mas claros los pixeles mas brillantes
