@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+  #simulator {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
