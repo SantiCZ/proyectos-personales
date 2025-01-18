@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de planetas</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="orbitCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('orbitCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Ajustar el centro del sistema
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        class Planet {
+            constructor(color, radius, orbitRadius, orbitSpeed) {
+                this.color = color;
+                this.radius = radius;
+                this.orbitRadius = orbitRadius;
+                this.orbitSpeed = orbitSpeed;
+                this.angle = Math.random() * Math.PI * 2; // Posicion inicial aleatoria
+            }
+
+            update() {
+                this.angle += this.orbitSpeed; // Incrementar el angulo
+            }
+
+            draw() {
+                const x = centerX + this.orbitRadius * Math.cos(this.angle);
+                const y = centerY + this.orbitRadius * Math.sin(this.angle);
+
+                // Dibujar la orbita
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, this.orbitRadius, 0, Math.PI * 2);
+                ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+                ctx.stroke();
+
+                // Dibujar el planeta
+                ctx.beginPath();
+                ctx.arc(x, y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Crear el sol
+        function drawSun() {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+        }
+
+        // Crear planetas
+        const planets = [
+            new Planet("red", 10, 100, 0.01),
+            new Planet("blue", 8, 150, 0.008),
+            new Planet("green", 12, 200, 0.006),
+            new Planet("purple", 6, 250, 0.004)
+        ];
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dibujar el sol
+            drawSun();
+
+            // Actualizar y dibujar los planetas
+            for (let planet of planets) {
+                planet.update();
+                planet.draw();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
