@@ -1,4 +1,4 @@
--- Crear la base de datos llamada 'Inventario'
+-- Crear la base de datos llamada 'Inventario' 
 CREATE DATABASE Inventario;
 
 -- Seleccionar la base de datos para usarla
