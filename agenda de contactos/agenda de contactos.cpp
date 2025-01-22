@@ -43,12 +43,12 @@ vector<Contacto> cargarContactos() {
 // Funcion para agregar un nuevo contacto
 void agregarContacto(vector<Contacto>& contactos) {
     Contacto nuevo;  // Crea un nuevo contacto
-    cout << "Nombre: ";
+    cout << "Nombre: ";// para ingresar el nombre
     cin.ignore();  // Limpia el buffer del teclado
     getline(cin, nuevo.nombre);  // Captura el nombre
-    cout << "Telefono: ";
+    cout << "Telefono: "; // para ingresar el telefono
     getline(cin, nuevo.telefono);  // Captura el telefono
-    cout << "Email: ";
+    cout << "Email: "; // para ingresar el email
     getline(cin, nuevo.email);  // Captura el email
     contactos.push_back(nuevo);  // Agrega el nuevo contacto al vector
     guardarContactos(contactos);  // Guarda los contactos en el archivo
