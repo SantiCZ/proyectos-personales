@@ -1,5 +1,5 @@
 // Configura tu API key obtenida de exchangerate-api.com
-const API_KEY = 'TU_API_KEY'; // Clave de la API para acceder a los datos
+const API_KEY = 'bfbd438ffbbb1ce4e8cab9dc'; // Clave de la API para acceder a los datos
 const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/`; // URL base de la API con la clave
 // Referencias a los elementos del DOM
 const fromCurrency = document.getElementById('fromCurrency'); // Selector de la moneda de origen
