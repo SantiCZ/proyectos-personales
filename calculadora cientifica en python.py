@@ -1,4 +1,4 @@
-import math  # Importamos la libreria math para realizar operaciones matematicas avanzadas.
+import math  # Importamos la libreria math para realizar operaciones matematicas avanzadas. 
 
 def menu():
     # Muestra el menu principal con las opciones de operaciones
