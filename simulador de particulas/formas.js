@@ -19,7 +19,7 @@ for (let i = 0; i < particleCount; i++) {
   });
 }
 
-// Actualizar posición de partículas
+// Actualizar posicion de partículas
 function updateParticles() {
   particles.forEach(p => {
     p.x += p.vx;
