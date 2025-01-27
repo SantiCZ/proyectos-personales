@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 int main() {
-    const int tamanio = 5;// precios 
-    float precios[tamanio];// precios originales
+    const int tamaño = 5;// precios 
+    float precios[tamaño];// precios originales
     float preciosAumentados[tamaño]; // precios con aumento
     float* ptrPrecios = precios; // Puntero para el array de precios
     float* ptrAumentados = preciosAumentados; // Puntero para el array de precios aumentados
