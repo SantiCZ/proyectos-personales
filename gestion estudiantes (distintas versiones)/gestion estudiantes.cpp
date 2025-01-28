@@ -9,7 +9,7 @@ using namespace std;
 class Estudiante {
 private:
     string nombre; // Nombre del estudiante
-    vector<float> calificaciones; // Lista de calificaciones del estudiante
+    vector<float> calificaciones; // Lista de calificaciones del estudiante  
 
 public:
     // Constructor para inicializar el nombre del estudiante
