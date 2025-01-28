@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Clase que representa a un estudiante
+// Clase que representa a un estudiante 
 class Estudiante {
 private:
     string nombre; // Nombre del estudiante
