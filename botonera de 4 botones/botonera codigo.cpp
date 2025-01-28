@@ -70,3 +70,4 @@ int main() {
         }
     }
 }
+//este codigo no ha sido probado con un prototipo electronico, aclaracion importante
