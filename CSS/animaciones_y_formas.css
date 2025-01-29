@@ -3,7 +3,6 @@ body {
     overflow: hidden;
     background-color: #000;
   }
-  
   #simulator {
     position: relative;
     width: 100vw;
