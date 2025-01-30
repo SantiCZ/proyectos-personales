@@ -16,13 +16,13 @@ int main() {
 	}
 	return 0;
 }
-//para autenticar segun la contraseña
+//para autenticar segun la contraseÃ±a
 bool autenticar() {
-	string contraseña;
-	cout << "ingrese su contraseña: ";
-	cin >> contraseña;
-	//simulador de comprobacion de contraseña
-	if (contraseña == "12345") {
+	string contraseÃ±a;
+	cout << "ingrese su contraseÃ±a: ";
+	cin >> contraseÃ±a;
+	//simulador de comprobacion de contraseÃ±a
+	if (contraseÃ±a == "12345") {
 		cout << "autentificacion exitosa, bienvenido";
 		return true;
 	}
@@ -35,7 +35,6 @@ bool autenticar() {
 void mostrarmenu() {
 	int eleccion;
     double balance = 1000.0; // Balance inicial
-
 		do {
 			cout << "\n menu principal \n";
 			cout << "1. ver cuenta" << endl; 
@@ -58,7 +57,6 @@ void mostrarmenu() {
             }
         } while (eleccion != 3);
 }
-
 // Mostrar informacion de la cuenta actual
 void menu_cuenta_actual() {
     cout << "\nInformacion de la cuenta actual:" << endl;
