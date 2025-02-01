@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
 using namespace std;
-
 // Definicion de la estructura para un libro
 struct Libro {
     string titulo;
@@ -11,7 +9,6 @@ struct Libro {
     int id;
     bool disponible;
 };
-
 // Clase para la gestion de la biblioteca
 class Biblioteca {
 private:
@@ -23,14 +20,12 @@ public:
         catalogo.push_back(nuevoLibro);
         cout << "Libro agregado con exito." << endl;
     }
-
-    // Metodo para mostrar todos los libros en el catalogo
+    // Metodo para mostrar todos los libros en el catalogo 
     void mostrarLibros() {
         for (const auto& libro : catalogo) {
             cout << "ID: " << libro.id << " | Titulo: " << libro.titulo << " | Autor: " << libro.autor << " | Disponible: " << (libro.disponible ? "Si" : "No") << endl;
         }
     }
-
     // Metodo para prestar un libro
     void prestarLibro(int id) {
         for (auto& libro : catalogo) {
@@ -65,12 +60,10 @@ public:
         cout << "Libro no encontrado." << endl;
     }
 };
-
 int main() {
     Biblioteca miBiblioteca;
     int opcion, id;
     string titulo, autor;
-
     do {
         // Menu de opciones
         cout << "\nSistema de Gestion de Biblioteca" << endl;
@@ -81,7 +74,6 @@ int main() {
         cout << "5. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
-
         switch (opcion) {
         case 1:
             cout << "Ingrese el titulo del libro: ";
@@ -113,6 +105,5 @@ int main() {
             cout << "Opcion no valida, intente de nuevo." << endl;
         }
     } while (opcion != 5);
-
     return 0;
 }
