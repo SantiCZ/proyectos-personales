@@ -1,8 +1,8 @@
 <?php
-// Conexion a la base de datos
-$host = 'localhost'; // Nombre del host
-$user = 'root'; // Usuario de la base de datos
-$password = ''; // Contrasena del usuario
+// Conexion a la base de datos 
+$host = 'localhost'; // Nombre del host 
+$user = 'root'; // Usuario de la base de datos 
+$password = ''; // Contraseña del usuario
 $database = 'sistema_encuestas'; // Nombre de la base de datos
 $conn = new mysqli($host, $user, $password, $database); // Crear conexion
 
