@@ -1,5 +1,5 @@
-import tkinter as tk #pip install tkinter
-import random #pip install random
+import tkinter as tk #pip install tkinter (en consola)
+import random #pip install random(en consola)
 
 # Dimensiones del tablero de juego
 ROW = 5
