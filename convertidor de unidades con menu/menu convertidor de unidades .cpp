@@ -34,12 +34,12 @@ int main() {
         case 3:
             cout << "Ingrese los grados Celsius: ";
             cin >> valor;
-            cout << valor << "캜 son " << celsiusToFahrenheit(valor) << "캟." << endl;
+            cout << valor << "째C son " << celsiusToFahrenheit(valor) << "째F." << endl;
             break;
         case 4:
             cout << "Ingrese los grados Fahrenheit: ";
             cin >> valor;
-            cout << valor << "캟 son " << fahrenheitToCelsius(valor) << "캜." << endl;
+            cout << valor << "째F son " << fahrenheitToCelsius(valor) << "째C." << endl;
             break;
         case 5:
             cout << "Saliendo del programa..." << endl;
@@ -48,5 +48,5 @@ int main() {
             cout << "Opcion no valida. Intente de nuevo." << endl;
         }
     } while (opcion != 5);
-    return 0;
-}
+    return 0; 
+} 
