@@ -1,11 +1,8 @@
 import java.util.Scanner; 
-
 public class UnitConverter {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
-
         do {
             System.out.println("\n=== Conversor de Unidades ===");
             System.out.println("1. Longitud");
@@ -13,9 +10,7 @@ public class UnitConverter {
             System.out.println("3. Temperatura");
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
-
             choice = scanner.nextInt();
-
             switch (choice) {
                 case 1:
                     convertLength(scanner);
@@ -36,19 +31,16 @@ public class UnitConverter {
 
         scanner.close();
     }
-
     private static void convertLength(Scanner scanner) {
         System.out.println("\nConversión de Longitud:");
         System.out.println("1. Metros a Kilómetros");
         System.out.println("2. Kilómetros a Millas");
         System.out.println("3. Millas a Metros");
         System.out.print("Elige una opción: ");
-
         int choice = scanner.nextInt();
         System.out.print("Introduce el valor: ");
         double value = scanner.nextDouble();
         double result;
-
         switch (choice) {
             case 1:
                 result = value / 1000;
@@ -66,18 +58,15 @@ public class UnitConverter {
                 System.out.println("Opción no válida.");
         }
     }
-
     private static void convertWeight(Scanner scanner) {
         System.out.println("\nConversión de Peso:");
         System.out.println("1. Kilogramos a Libras");
         System.out.println("2. Libras a Kilogramos");
         System.out.print("Elige una opción: ");
-
         int choice = scanner.nextInt();
         System.out.print("Introduce el valor: ");
         double value = scanner.nextDouble();
         double result;
-
         switch (choice) {
             case 1:
                 result = value * 2.20462;
@@ -91,18 +80,15 @@ public class UnitConverter {
                 System.out.println("Opción no válida.");
         }
     }
-
     private static void convertTemperature(Scanner scanner) {
         System.out.println("\nConversión de Temperatura:");
         System.out.println("1. Celsius a Fahrenheit");
         System.out.println("2. Fahrenheit a Celsius");
         System.out.print("Elige una opción: ");
-
         int choice = scanner.nextInt();
         System.out.print("Introduce el valor: ");
         double value = scanner.nextDouble();
         double result;
-
         switch (choice) {
             case 1:
                 result = (value * 9/5) + 32;
