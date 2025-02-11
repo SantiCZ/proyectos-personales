@@ -3,7 +3,6 @@ const apiKey = 'TU_API_KEY'; // Reemplaza con tu clave de API
 const searchBar = document.querySelector('.search-bar');// Selecciona la barra de busqueda
 const searchButton = document.querySelector('button');// Selecciona el boton de busqueda
 const weatherContainer = document.querySelector('.weather-container');// Selecciona el contenedor de clima
-
 searchButton.addEventListener('click', () => {
     const city = searchBar.value;
     if (city) {
@@ -30,16 +29,13 @@ function updateWeather(data) {
     const { main, name, weather } = data;
     const { temp } = main;
     const { description, icon } = weather[0];
-
     const weatherCard = document.createElement('div');
     weatherCard.classList.add('weather-card');
-
     weatherCard.innerHTML = `
         <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Icono de clima" class="icono-de-clima">
         <h1 class="temp">${Math.round(temp)}°C</h1>
         <h1 class="ciudad">${name}</h1>
         <h3 class="descripcion">${description.charAt(0).toUpperCase() + description.slice(1)}</h3>
     `;
-
     weatherContainer.appendChild(weatherCard);// Agrega el elemento al contenedor de clima
 }
