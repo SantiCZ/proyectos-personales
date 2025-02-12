@@ -3,7 +3,7 @@
 using namespace std;  
 //funciones 
 bool autenticar();
-void mostrarmenu();
+void mostrarmenu(); 
 void menu_cuenta_actual();
 void ahorros_cuenta(double balance);
 void extraer(double& balance, double ammount);
