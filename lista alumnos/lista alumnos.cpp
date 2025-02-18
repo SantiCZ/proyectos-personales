@@ -29,7 +29,7 @@ bool verifica(string leg) {
             return false;
         }
         leer >> Nom; //para q el archivo avance
-    }
+    } 
     leer.close();
     return true; //esta permitido agregar en el archivo
 }
