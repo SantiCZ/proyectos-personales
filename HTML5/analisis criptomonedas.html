@@ -57,7 +57,6 @@
         // Hace una solicitud al endpoint del servidor
         const response = await fetch('/api/crypto-prices');
         const data = await response.json(); // Convierte la respuesta a JSON
-
         // Actualiza los elementos HTML con los precios
         document.getElementById('bitcoin-price').innerText = `$${data.bitcoin.usd}`;
         document.getElementById('ethereum-price').innerText = `$${data.ethereum.usd}`;
@@ -66,7 +65,6 @@
         console.error('Error fetching crypto prices:', error); // Muestra un error en la consola
       }
     }
-
     // Llama a la funcion para obtener precios
     fetchCryptoPrices();
     // Actualiza los precios cada minuto
