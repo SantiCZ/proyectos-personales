@@ -40,6 +40,6 @@ start_button.grid(column=0, row=2, padx=10, pady=10, sticky=tk.E)  # Ubica el bo
 stop_button = ttk.Button(
     root, text='Parar',
     command=parar  # Asocia la funcion parar al boton
-)
+) 
 stop_button.grid(column=1, row=2, padx=10, pady=10, sticky=tk.W)  # Ubica el boton en la ventana
 root.mainloop()  # Inicia el bucle principal de la aplicacion
