@@ -77,7 +77,7 @@ public:
 int main() {
     // Crear una instancia del sistema de gestion
     SistemaGestionEstudiantes sistema;
-    // Agregar estudiantes
+    // Agregar estudiantes, debe ser con nombre y apellido
     sistema.agregarEstudiante("Juan Perez");
     sistema.agregarEstudiante("Maria Lopez");
     // Agregar calificaciones a los estudiantes
