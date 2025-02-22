@@ -1,9 +1,7 @@
 const express = require('express'); // Importa Express
 const axios = require('axios'); // Importa Axios
-
 const app = express(); // Crea una instancia de Express
 const PORT = 3000; // Define el puerto en el que correra el servidor
-
 // Endpoint para obtener precios de criptomonedas
 app.get('/api/crypto-prices', async (req, res) => {
   try {
