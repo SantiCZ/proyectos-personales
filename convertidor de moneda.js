@@ -18,7 +18,7 @@ async function loadCurrencies() {
                 fromCurrency.innerHTML += `<option value="${currency}">${currency}</option>`; // Agrega cada moneda al selector de origen
                 toCurrency.innerHTML += `<option value="${currency}">${currency}</option>`; // Agrega cada moneda al selector de destino
             });
-        }
+        } 
     } catch (error) {
         console.error('Error al cargar las monedas:', error); // Muestra un error en caso de fallo
     }
